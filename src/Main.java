@@ -33,6 +33,7 @@ public class Main {
             System.out.println("3: print");
             System.out.println("4: erweitertes add");
             System.out.println("5: leer?");
+            System.out.println("6: komplement");
             eingabe = Integer.parseInt(br.readLine());
             switch (eingabe) {
                 case 1:
@@ -74,7 +75,13 @@ public class Main {
                     if(empty==false)System.out.println("Die Menge ist nicht Leer.");
                     if(empty==true)System.out.println("Die Menge ist Leer");
                     break;
-
+                case 6: 
+                    System.out.println("Menge:");
+                    um.print();
+                    um.komplement();
+                    System.out.println("neue Menge:");
+                    um.print();
+                    break;
                 default:
                     System.out.println("Ungueltige Eingabe");
 

@@ -8,7 +8,7 @@
  *
  * @author Wladislaw
  */
-public class Menge {
+public abstract class Menge {
 
     protected byte array[];
 
@@ -45,5 +45,7 @@ public class Menge {
             
         }
     }
+    
+    abstract void komplement();
     
 }
