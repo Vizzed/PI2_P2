@@ -25,7 +25,8 @@ public class Main {
         //System.out.println("Geben Sie die Groesse des Arrays ein:");
         //laenge = Integer.parseInt(br.readLine());
         //Menge m = new Menge(laenge);
-        UMenge um = new UMenge(10, 2);
+        //UMenge um = new UMenge(10, 2);
+        UMenge um=null;
         while (loop) {
             System.out.println("Menue:");
             System.out.println("1: add");
@@ -52,8 +53,14 @@ public class Main {
                     System.out.println("Die Anzahl der Befüllten Felder: " + um.size());
                     break;
                 case 3:
+                    try{
                     System.out.println("Menge:");
                     um.print();
+                    }
+                    catch(NullPointerException e){
+                        System.out.println("Fehler: Nullzeiger-Zugriff");
+                    }
+                    System.out.println("Programm läuft weiter");
                     break;
                 case 4:
                     int unten;
