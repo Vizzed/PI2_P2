@@ -9,5 +9,15 @@
  * @author Wladislaw
  */
 public class Menge {
+
+    byte array[];
+
+    public Menge(int laenge) {
+        array = new byte[laenge];
+        for (int i = 0; i < laenge; i++) {
+            array[i] = 0;
+        }
+    }
+
     
 }
