@@ -20,7 +20,7 @@ public class Menge {
     }
 
     public int add(int wert) {
-        if (array.length < wert) {
+        if (array.length <= wert) {
             return -1;
         }
         array[wert] = 1;
