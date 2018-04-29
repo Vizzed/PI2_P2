@@ -10,7 +10,7 @@
  */
 public class Menge {
 
-    byte array[];
+    protected byte array[];
 
     public Menge(int laenge) {
         array = new byte[laenge];

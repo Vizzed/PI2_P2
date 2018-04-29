@@ -22,14 +22,17 @@ public class Main {
         int eingabe;
         InputStreamReader isr = new InputStreamReader(System.in);
         BufferedReader br = new BufferedReader(isr);
-        System.out.println("Geben Sie die Groesse des Arrays ein:");
-        laenge = Integer.parseInt(br.readLine());
-        Menge m = new Menge(laenge);
+        //System.out.println("Geben Sie die Groesse des Arrays ein:");
+        //laenge = Integer.parseInt(br.readLine());
+        //Menge m = new Menge(laenge);
+        UMenge um = new UMenge(10, 2);
         while (loop) {
             System.out.println("Menue:");
             System.out.println("1: add");
             System.out.println("2: size");
             System.out.println("3: print");
+            System.out.println("4: erweitertes add");
+            System.out.println("5: leer?");
             eingabe = Integer.parseInt(br.readLine());
             switch (eingabe) {
                 case 1:
@@ -37,7 +40,7 @@ public class Main {
                     int temp;
                     System.out.println("Geben Sie einen Wert ein:");
                     wert = Integer.parseInt(br.readLine());
-                    temp = m.add(wert);
+                    temp = um.add(wert);
                     if (temp == -1) {
                         System.out.println("Fehler!");
                     } else {
@@ -45,12 +48,33 @@ public class Main {
                     }
                     break;
                 case 2:
-                    System.out.println("Die Anzahl der Befüllten Felder: " + m.size());
+                    System.out.println("Die Anzahl der Befüllten Felder: " + um.size());
                     break;
                 case 3:
                     System.out.println("Menge:");
-                    m.print();
+                    um.print();
                     break;
+                case 4:
+                    int unten;
+                    int oben;
+                    int err;
+
+                    System.out.println("Geben Sie die untere Grenze ein:");
+                    unten = Integer.parseInt(br.readLine());
+                    System.out.println("Geben Sie die obere Grenze ein:");
+                    oben = Integer.parseInt(br.readLine());
+                    err = um.add(unten, oben);
+                    if (err ==-1) {
+                        System.out.println("Fehler!");
+                    }
+                    if(err==0)System.out.println("Erfolgreich!");
+                    break;
+                case 5:
+                    boolean empty=um.leer();
+                    if(empty==false)System.out.println("Die Menge ist nicht Leer.");
+                    if(empty==true)System.out.println("Die Menge ist Leer");
+                    break;
+
                 default:
                     System.out.println("Ungueltige Eingabe");
 
