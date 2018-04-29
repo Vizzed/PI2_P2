@@ -35,6 +35,7 @@ public class Main {
             System.out.println("4: erweitertes add");
             System.out.println("5: leer?");
             System.out.println("6: komplement");
+            System.out.println("7: Programm beenden");
             eingabe = Integer.parseInt(br.readLine());
             switch (eingabe) {
                 case 1:
@@ -88,6 +89,9 @@ public class Main {
                     um.komplement();
                     System.out.println("neue Menge:");
                     um.print();
+                    break;
+                case 7:
+                    loop=false;
                     break;
                 default:
                     System.out.println("Ungueltige Eingabe");
