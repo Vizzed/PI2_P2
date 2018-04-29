@@ -19,5 +19,31 @@ public class Menge {
         }
     }
 
+    public int add(int wert) {
+        if (array.length < wert) {
+            return -1;
+        }
+        array[wert] = 1;
+        return 0;
+    }
+
+    public int size() {
+        int temp = 0;
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] == 1) {
+                temp++;
+            }
+        }
+        return temp;
+    }
+    
+    public void print(){
+        for (int i = 0; i < array.length; i++) {
+            if (array[i] == 1) {
+                System.out.println(i);
+            }
+            
+        }
+    }
     
 }
